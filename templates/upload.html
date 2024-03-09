@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+        .user-info {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+        }
+        .username-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0ad4e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .file-upload-wrapper, .file-list-wrapper {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="user-info">
+    <div class="username-circle">U</div>
+    <button id="logoutButton" class="btn btn-warning">Logout</button>
+</div>
+<div class="container">
+    <h2>Manage Your Files</h2>
+    <div class="file-upload-wrapper">
+        <input type="file" id="fileInput" multiple class="form-control">
+        <button onclick="uploadFile()" class="btn btn-primary mt-2">Upload</button>
+    </div>
+    <div class="file-list-wrapper">
+        <h3>Your Files</h3>
+        <ul id="fileList" class="list-group">
+            <!-- Files will be listed here -->
+        </ul>
+    </div>
+</div>
+<div aria-live="polite" aria-atomic="true" style="position: relative; z-index: 1050;">
+    <div id="toastContainer" style="position: fixed; top: 1rem; right: 1rem;"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script>
